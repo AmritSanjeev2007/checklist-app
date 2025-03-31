@@ -1,0 +1,6 @@
+{
+    "task-ids": [], // string[]
+    "task-names": [], // string[]
+    "task-descriptions": [], // string[]
+    "task-deadlines": [] // string[]
+}

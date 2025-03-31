@@ -1,0 +1,6 @@
+{
+    "goal-ids": [], // string[]
+    "goal-texts": [], // string[]
+    "goal-deadlines": [], // string[]
+    "goals-completed": [] // boolean[]
+}
