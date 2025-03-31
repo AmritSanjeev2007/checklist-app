@@ -1,0 +1,307 @@
+div#task-view {
+    padding-top: 30px;
+    
+    /* border: 1px solid red; */
+
+    margin-left: 60px;
+    padding-right: 20px;
+    
+    width: calc(100vw - 80px);
+    height: calc(100vh - 70px);
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+div#task-view[aria-selected="false"] > * {
+    display: none;
+}
+
+
+div#task-view[aria-selected="true"] > p#null-text {
+    display: none;
+}
+div#task-view[aria-selected="false"] > p#null-text {
+    display: block;
+    color: white;
+
+    font-family: "Open Sans";
+
+    text-align: center;
+}
+
+div#task-view > h2#task-title {
+    text-align: center;
+    margin: 0;
+
+    color: white;
+
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    font-size: 28px;
+    font-weight: bolder;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div#task-advanced-info {
+    margin-top: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-left: 10px; margin-right: 10px;
+}
+
+div#task-advanced-info > h3 {
+    color: rgb(255, 87, 57);
+    filter: invert(1);
+    font-size: 12px;
+    font-weight: normal;
+
+    font-family: consolas;
+}
+
+div#task-advanced-info > h3#task-deadline {
+    text-align: left;
+}
+div#task-advanced-info > h3#task-uuid {
+    text-align: right;
+}
+
+div#task-view > hr {
+    margin-top: 3px; margin-bottom: 3px;
+    border-color: rgb(57, 87, 255);
+}
+
+div#task-view > div#task-description {
+    margin-left: 10px; margin-right: 10px;
+
+    margin-top: 20px; margin-bottom: 20px;
+
+    line-height: 22px;
+
+    color: white;
+
+    font-size: 14px;
+
+    min-height: 200px;
+}
+
+
+div#task-goals-heading {
+    display: grid;
+    grid-template-columns: auto 100px;
+
+    margin-top: 20px;
+}
+
+div#task-goals-heading > h3#task-goals-heading-text-indicator {
+    text-align: center;
+    color: white;
+
+    font-size: 24px;
+
+    margin: 0;
+    margin-left: 100px; /* Size of task-goals-heading-btns max-size */
+    user-select: none;
+}
+
+div#task-goals-heading > div#task-goal-heading-btns {
+    display: flex;
+    margin-top: auto; margin-bottom: auto;
+}
+
+div#task-goal-heading-btns > button {
+    border: 1px solid rgb(57, 87, 255);
+    background-color: rgb(57, 87, 255) !important;
+    border-radius: 4px;
+
+    width: 36px; height: 33px;
+
+    background-color: transparent;
+
+    transition: 0.3s;
+
+    margin: auto;
+
+    cursor: pointer;
+}
+div#task-goal-heading-btns > button:hover {
+    background-color: transparent !important;
+}
+
+div#task-goal-heading-btns > button#task-goals-heading-new-goal-btn {
+    background: url('../Assets/add-task.svg') no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+}
+div#task-goal-heading-btns > button#task-goals-heading-save-btn {
+    background: url('../Assets/save.svg') no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+}
+
+h3#pending-task-goals-title {
+    color: white;
+    margin-left: 40px;
+    user-select: none;
+}
+h3#completed-task-goals-title {
+    color: white;
+    margin-left: 40px;
+    user-select: none;
+}
+
+div#task-goals {
+    margin-top: 30px;
+}
+
+div.task-goal {
+    display: grid;
+    grid-template-columns: 40px auto 100px;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 10px;
+
+    margin-left: 40px;
+    margin-right: 40px;
+
+    margin-bottom: 10px;
+
+    cursor:grab;
+}
+div.task-goal:hover {
+    background-color: #03001d;
+}
+div.task-goal[aria-disabled="true"] {
+    filter: grayscale(1);
+}
+
+div.task-goal > div.task-goal-marker {
+    width: 20px; height: 20px;
+    border-radius: 100px;
+
+    margin: auto;
+
+    cursor: default;
+
+    background-color: lime;
+}
+
+div.task-goal > p.task-goal-name {
+    color: white;
+
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    user-select: none;
+}
+
+div.task-goal-editables {
+    display: flex;
+    margin-right: 10px;
+
+    cursor: default;
+}
+
+div.task-goal-editables > button {
+    width: 30px; height: 30px;
+    background-color: rgb(57, 87, 255) !important;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 4px;
+
+    margin: auto;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+div.task-goal-editables > button:hover {
+    background-color: transparent !important;
+}
+
+div.task-goal-editables > button.task-goal-complete-btn {
+    background: url('../Assets/complete.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+div.task-goal-editables > button.task-goal-uncomplete-btn {
+    background: url('../Assets/uncomplete.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+div.task-goal-editables > button.task-goal-delete-btn {
+    background: url('../Assets/clear.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+div#task-view > hr#un-or-completed-division {
+    margin-left: 20px; margin-right: 20px;
+
+    margin-top: 30px; margin-bottom: 30px;
+}
+
+main > button#create-task-btn {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 5px;
+
+    background-color: rgb(57, 87, 255) !important;
+
+    background: url('../Assets/add-task.svg') no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+main > button#create-task-btn:hover {
+    background-color: transparent !important; 
+}
+
+main > button#task-options-dropdown-button {
+    position: absolute;
+    display: inline-block;
+
+    left: 60px; top: 50px;
+
+    width: 40px; height: 40px;
+
+    background-color: rgb(57, 87, 255) !important;
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+main > button#task-options-dropdown-button[aria-expanded="false"] {
+    background: url('../Assets/options.svg') no-repeat;
+    background-size: 24px;
+    background-position: center;
+}
+main > button#task-options-dropdown-button[aria-expanded="true"] {
+    background: url('../Assets/Titlebar/close.svg') no-repeat;
+    background-size: 24px;
+    background-position: center;
+}
+
+main > button#task-options-dropdown-button:hover {
+    background-color: transparent !important; 
+}

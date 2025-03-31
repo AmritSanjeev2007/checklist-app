@@ -1,0 +1,77 @@
+@keyframes slide-in {
+    0% {
+        left: -20px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 90px;
+        opacity: 1;
+    }
+}
+
+div#options-container[aria-expanded="false"] {
+    display: none;
+}
+
+div#options-container[aria-expanded="true"] {
+    position: absolute;
+    display: inline-block;
+
+    animation: 0.4s ease-out slide-in;
+    left: 90px; top: 95px;
+
+    width: 150px;
+    height: 200px;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 10px;
+
+    background-color: #020013;
+}
+
+div#options-container > button {
+    display: block;
+    width: 100%;
+
+    color: white;
+
+    background-color: #020013 !important;
+
+    font-family: "Open Sans";
+    font-size: 14px;
+
+    height: 50px;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding-left: 45px;
+    text-align: left;
+
+    border-bottom: 1px solid rgb(57, 87, 255);
+}
+
+div#options-container > button#edit-task-btn {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background: url('../Assets/edit-task.svg') no-repeat;
+    background-position: 15px 50%;
+    background-size: 20px;
+}
+
+div#options-container > button#delete-task-btn {
+    background: url('../Assets/delete.svg') no-repeat;
+    background-position: 15px 50%;
+    background-size: 20px;
+}
+
+div#options-container > button:hover {
+    background-color: rgb(57, 87, 255) !important;
+}

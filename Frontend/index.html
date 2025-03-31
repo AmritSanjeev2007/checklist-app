@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist App</title>
+
+    <link rel="favicon" href="favicon-256x256.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="Style/titlebar.css">
+    <link rel="stylesheet" href="Style/task-list.css">
+    <link rel="stylesheet" href="Style/task-creation.css">
+    <link rel="stylesheet" href="Style/task-list-components.css">
+    <link rel="stylesheet" href="Style/task-view.css">
+    <link rel="stylesheet" href="Style/goal-creator.css">
+    <link rel="stylesheet" href="Style/formatter.css">
+    <link rel="stylesheet" href="Style/task-options.css">
+</head>
+<body>
+    <nav id="titlebar">
+        <img id="icon" src="../Favicon/favicon-256x256.png" alt="Icon" width="24" height="24"/>
+        <h1>Checklist App</h1>
+        <div id="titlebar-right">
+            <button id="dev-tools-btn" title="Developer Tools"></button>
+            <button id="fullscreen-btn" title="Fullscreen"></button>
+            <button id="minimize-btn" title="Minimize"></button>
+            <button id="maximize-btn" title="Maximize"></button>
+            <button id="close-btn" title="Close"></button>
+    </nav>
+
+    <main>
+        <div id="task-view" aria-selected="false">
+
+            <p id="null-text">Select a task to view more details about it.</p>
+
+            <h2 id="task-title"></h2>
+            <div id="task-advanced-info">
+                <h3 id="task-deadline"></h3>
+                <h3 id="task-uuid"></h3>
+            </div>
+
+            <hr>
+
+            <div id="task-description"></div>
+
+            <hr>
+
+            <div id="task-goals-heading">
+                <h3 id="task-goals-heading-text-indicator">Task Goals</h3>
+                <div id="task-goal-heading-btns">
+                    <button id="task-goals-heading-new-goal-btn" title="New Goal"></button>
+                    <button id="task-goals-heading-save-btn" title="Save"></button>
+                </div>
+            </div>
+            
+            <h3 id="pending-task-goals-title">Pending</h3>
+            <div id="task-goals">
+                <!-- 
+                Template
+                ====================================================================================
+
+                <div class="task-goal">
+                    <div class="task-goal-marker"></div>
+                    <p class="task-goal-name">Eating</p>
+                    <div class="task-goal-editables">
+                        <button class="task-goal-complete-btn" title="Mark Complete"></button>
+                        <button class="task-goal-delete-btn" title="Clear Goal"></button>
+                    </div>
+                </div> 
+                -->
+            </div>
+
+            <hr id="un-or-completed-division">
+
+            <h3 id="completed-task-goals-title">Completed</h3>
+            <div id="completed-task-goals">
+                <!-- 
+                Template
+                ====================================================================================
+
+                <div class="task-goal" aria-disabled="true">
+                    <div class="task-goal-marker"></div>
+                    <p class="task-goal-name">Farting</p>
+                    <div class="task-goal-editables">
+                        <button class="task-goal-uncomplete-btn" title="Mark Uncomplete"></button>
+                        <button class="task-goal-delete-btn" title="Clear Goal"></button>
+                    </div>
+                </div> 
+                -->
+            </div>
+        </div>
+
+        <button id="create-task-btn" title="Create New Task"></button>
+        <button id="task-options-dropdown-button" title="Task Options" aria-expanded="false"></button>
+    </main>
+
+    <div id="options-container" aria-expanded="false">
+        <button id="edit-task-btn">Edit Task</button>
+        <button id="delete-task-btn">Delete Task</button>
+    </div>
+
+    <dialog id="create-goal-modal" aria-modal="true">
+        <h2 id="create-goal-title">Create Goal</h2>
+        <h3 id="create-goal-name-input-marker" title="This is a required field.">Name<span class="required-field">*</span></h3>
+        <input type="text" id="create-goal-name-input"/>
+        <h3 id="create-goal-deadline-input-marker" title="This is a required field.">Deadline<span class="required-field">*</span></h3>
+        <input type="datetime-local" id="create-goal-deadline-input"/>
+        <div id="create-goal-submit-btns-container">
+            <button id="create-goal-btn">Create</button>
+            <button id="cancel-goal-btn">Cancel</button>
+        </div>
+    </dialog>
+
+    <div id="task-list-panel" aria-expanded="false">
+        <div id="task-list-container">
+            <h2>Task List</h2>
+            <div id="tasks"></div>
+        </div>
+        <button id="task-list-panel-toggle-btn" title="Open Task List"></button>
+    </div>
+
+    <script src="Scripts/titlebar.js"></script>
+    <script src="Scripts/task-list-panel.js"></script>
+    <script type="module" src="Scripts/task-display.js"></script>
+    <script src="Scripts/task-creation.js"></script>
+    <script type="module" src="Scripts/data-watcher.js"></script>
+    <script type="module" src="Scripts/formatter.js"></script>
+    <script type="module" src="Scripts/task-viewer.js"></script>
+    <script type="module" src="Scripts/goal-manager.js"></script>
+    <script type="module" src="Scripts/task-options.js"></script>
+    <script src="Scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Editor</title>
+
+    <link rel="favicon" href="favicon-256x256.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="Style/titlebar.css">
+    <link rel="stylesheet" href="Style/task-creator.css">
+</head>
+<body>
+    <nav id="titlebar">
+        <img id="icon" src="../Favicon/favicon-256x256.png" alt="Icon" width="24" height="24"/>
+        <h1>Task Editor</h1>
+        <div id="titlebar-right">
+            <button id="dev-tools-btn" title="Developer Tools"></button>
+            <button id="fullscreen-btn" title="Fullscreen"></button>
+            <button id="minimize-btn" title="Minimize"></button>
+            <button id="maximize-btn" title="Maximize"></button>
+            <button id="close-btn" title="Close"></button>
+    </nav>
+
+    <header> <h1>Task Editor</h1></header>
+
+    <main>
+        <h2>Title<span class="required">*</span></h2>
+        <input type="text" id="title-input"/>
+
+        <h2>Description</h2>
+        <textarea id="description-input"></textarea>
+        <h3>The text allows for formating. The details of which can be found <span id="info-link">here</span>.</h3>
+
+        <h2>Deadline<span class="required">*</span></h2>
+        <input type="date" id="deadline"/>
+    </main>
+
+    <button id="create-task">Save</button>
+
+    <script>document.querySelectorAll('span.required').forEach(el => el.title="This is a required field.")</script>
+    <script src="Child Scripts/titlebar.js"></script>
+    <script src="Child Scripts/info-opener.js"></script>
+    <script type="module" src="Task Editor Scripts/info-get.js"></script>
+    <script type="module" src="Task Editor Scripts/info-edit-save.js"></script>
+</body>
+</html>

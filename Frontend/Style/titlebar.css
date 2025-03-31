@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+:root {
+    --color-titlebar-bg: #03001d;
+    --color-background: #020013;
+
+    --font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+
+    width: 100vw; height: 100vh;;
+}
+
+nav#titlebar {
+    display: grid;
+    grid-template-columns: min-content auto 190px;
+
+    margin: 0;
+    padding-left: 10px;
+
+    width: calc(100vw - 10px); /* 10px for padding */
+    height: 35px;
+
+    background-color: var(--color-titlebar-bg);
+
+    border-bottom: 1px solid rgb(57, 87, 255);
+
+    app-region: drag; /* Allow dragging of the window */
+    -webkit-app-region: drag; /* Allow dragging of the window */
+}
+
+nav#titlebar > img {
+    margin: auto;
+
+    app-region: drag; /* Prevent dragging of the image */
+    -webkit-app-region: drag; /* Prevent dragging of the image */
+
+    user-select: none; /* Prevent text selection */
+}
+nav#titlebar > h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    font-family: consolas;
+    font-size: 14px;
+    font-weight: normal;
+
+    margin-left: 10px;
+
+    text-align: left;
+
+    user-select: none;
+
+    color: white;
+
+    app-region: drag; /* Prevent dragging of the image */
+    -webkit-app-region: drag; /* Prevent dragging of the image */
+}
+
+nav#titlebar > div#titlebar-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    app-region: no-drag; /* Prevent dragging of the image */
+    -webkit-app-region: no-drag; /* Prevent dragging of the image */
+}
+
+nav#titlebar > div#titlebar-right > button {
+    display: inline-block;
+    width: 38px;
+    height: 32px;
+
+    background-color: transparent;
+    border: none;
+}
+nav#titlebar > div#titlebar-right > button:hover {
+    background-color: #18124e !important;
+}
+nav#titlebar > div#titlebar-right > button#close-btn:hover {
+    background-color: #be1335 !important;
+}
+
+nav#titlebar > div#titlebar-right > button#dev-tools-btn {
+    background: url('../Assets/Titlebar/dev-tools.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+nav#titlebar > div#titlebar-right > button#fullscreen-btn {
+    background: url('../Assets/Titlebar/fullscreen.svg') no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+}
+nav#titlebar > div#titlebar-right > button#minimize-btn {
+    background: url('../Assets/Titlebar/minimize.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+nav#titlebar > div#titlebar-right > button#maximize-btn {
+    background: url('../Assets/Titlebar/maximize.svg') no-repeat;
+    background-position: center;
+    background-size: 15px 15px;
+}
+nav#titlebar > div#titlebar-right > button#close-btn {
+    background: url('../Assets/Titlebar/close.svg') no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+
+    width: 38px;
+}

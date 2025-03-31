@@ -1,0 +1,8 @@
+dialog#task-creator {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    width: 600px;
+    height: 400px;
+}

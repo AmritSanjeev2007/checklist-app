@@ -1,0 +1,160 @@
+header {
+    margin-top: 10px;
+
+    display: block;
+    height: 50px;
+}
+
+header > h1 {
+    margin: 0;
+    color: white;
+
+    font-size: 24px;
+    text-align: center;
+    font-weight: normal;
+}
+
+main {
+    margin-top: 20px;
+    color: rgb(187, 187, 187);
+    font-weight: normal;
+
+    margin-left: 20px; margin-right: 20px;
+}
+
+span.required {
+    color: rgb(94, 118, 255);
+    user-select: none;
+}
+span#info-link {
+    color: rgb(94, 118, 255);
+    cursor: pointer;
+}
+
+main > h2 {
+    margin: 0;
+    font-weight: normal;
+    user-select: none;
+}
+main > input#title-input {
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 5px;
+    outline: none;
+
+    margin-top: 5px;
+
+    width: calc(100vw - 40px);
+    height: 30px;
+
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 30px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+main > textarea#description-input {
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 5px;
+    outline: none;
+
+    margin-top: 5px;
+
+    width: calc(100vw - 40px);
+    height: 100px;
+
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+
+    padding: 5px;
+
+    font-family: monospace;
+    overflow-y: scroll;
+
+    -moz-tab-size : 4;
+    -o-tab-size : 4;
+    tab-size : 4;
+}
+
+main > h3 {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+main > input#deadline {
+    background-color: transparent;
+    outline: none;
+
+    color: black;
+
+    border: 1px solid rgb(255, 87, 57);
+    border-radius: 5px;
+
+    text-align: center;
+
+    filter: invert(1);
+
+    height: 30px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(57, 87, 255);
+    border-radius: 5px;
+    cursor: default;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(98, 122, 255);
+}
+
+::-webkit-resizer {
+    background-color: transparent;
+}
+
+
+button#create-task {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+
+    background-color: rgb(57, 87, 255);
+    border: 1px solid rgb(57, 87, 255);
+    border-radius: 5px;
+
+    color: white;
+    font-family: "Open Sans";
+    font-size: 16px;
+
+    width: 80px;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+button#create-task:hover {
+    background-color: transparent;
+}
